@@ -39,6 +39,33 @@ btn.addEventListener('click', () => {
 
     // creazione griglia padre
     const grid = document.createElement('div');
-    grid.classList.add('d-flex', 'flex-wrap', 'grid');
+    grid.classList.add('grid', 'd-flex', 'flex-wrap');
     wrapGrid.append(grid);
+
+    for(let i = 1; i <= cellsNumber; i++){
+      const num = i;
+    // gen square
+    const square = gridSquare (num, cellsPerSide)
+    grid.append(square);
+    }
 });
+
+/***********
+ FUNZIONI
+***********/
+
+function gridSquare (num, cells){
+    const node = document.createElement('div');
+    node.classList.add('square', 'd-flex', 'justify-content-center', 'align-items-center');
+    node.style.width = `calc(100% / ${cells})`;
+    node.style.height = `calc(100% / ${cells})`;
+
+    // nodo span num
+    const span = document.createElement('span');
+    span.append(num);
+
+    // aggiunta dello span a quare
+    node.append(span);
+
+    return node;
+}
