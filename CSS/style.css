@@ -1,0 +1,23 @@
+/* GENERAL */
+body{
+    background-color: #7fffd4;
+}
+/*  */
+
+nav{
+    height: 80px;
+}
+
+.grid{
+    width: 500px;
+    height: 500px;
+    border: 2px solid #fff;
+}
+
+.square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
