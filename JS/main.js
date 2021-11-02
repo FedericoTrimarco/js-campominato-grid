@@ -21,17 +21,17 @@ btn.addEventListener('click', () => {
     let cellsPerSide;
     
     switch (GridDimension) {
-        case '1': 
+        case 'Easy': 
             cellsNumber = 100;
             cellsPerSide = 10;
             break;
     
-        case '2':
+        case 'Normal':
             cellsNumber = 81;
             cellsPerSide = 9;
             break;
         
-        case '3':
+        case 'Hard':
             cellsNumber = 49;
             cellsPerSide = 7;
     }
@@ -48,9 +48,7 @@ btn.addEventListener('click', () => {
     // gen square
       const square = gridSquare(num, cellsPerSide);
 
-      square.addEventListener('click', function(){
-        this.classList.add('active');
-      });
+      square.addEventListener('click', () => square.classList.add('active'));
 
       grid.append(square);
     }
