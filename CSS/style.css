@@ -30,3 +30,7 @@ footer{
     background-color: #fff;
     padding: 20px;
 }
+
+footer .link-boolean:focus{
+    color: purple;
+}
