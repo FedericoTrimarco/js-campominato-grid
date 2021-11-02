@@ -1,5 +1,5 @@
 /* 
-   L’utente indica un livello di difficoltà in base al quale viene generata una griglia di gioco quadrata, in cui    ogni cella contiene un numero tra quelli compresi in un range (vedi immagine allegata):
+   L’utente indica un livello di difficoltà in base al quale viene generata una griglia di gioco quadrata, in cui ogni cella contiene un numero tra quelli compresi in un range (vedi immagine allegata):
    con difficoltà 1 => tra 1 e 100
    con difficoltà 2 => tra 1 e 81
    con difficoltà 3 => tra 1 e 49
@@ -15,7 +15,8 @@ btn.addEventListener('click', () => {
     wrapGrid.innerHTML = '';
     // set grid dimension
     const GridDimension = difficultiesLevel.value;
-    console.log(GridDimension);
+    console.log('livello:',GridDimension);
+
     let cellsNumber;
     let cellsPerSide;
     
@@ -34,8 +35,8 @@ btn.addEventListener('click', () => {
             cellsNumber = 49;
             cellsPerSide = 7;
     }
-    console.log(cellsNumber);
-    console.log(cellsPerSide);
+    console.log('cellsNumber:', cellsNumber);
+    console.log('cellsPerSide:', cellsPerSide);
 
     // creazione griglia padre
     const grid = document.createElement('div');
@@ -45,8 +46,13 @@ btn.addEventListener('click', () => {
     for(let i = 1; i <= cellsNumber; i++){
       const num = i;
     // gen square
-    const square = gridSquare (num, cellsPerSide)
-    grid.append(square);
+      const square = gridSquare(num, cellsPerSide);
+
+      square.addEventListener('click', function(){
+        this.classList.add('active');
+      });
+
+      grid.append(square);
     }
 });
 
@@ -54,9 +60,9 @@ btn.addEventListener('click', () => {
  FUNZIONI
 ***********/
 
-function gridSquare (num, cells){
+function gridSquare(num, cells){
     const node = document.createElement('div');
-    node.classList.add('square', 'd-flex', 'justify-content-center', 'align-items-center');
+    node.classList.add('square', 'd-flex', 'justify-content-center', 'align-items-center', 'fw-bold');
     node.style.width = `calc(100% / ${cells})`;
     node.style.height = `calc(100% / ${cells})`;
 
