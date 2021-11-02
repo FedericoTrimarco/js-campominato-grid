@@ -48,7 +48,7 @@ btn.addEventListener('click', () => {
     // gen square
       const square = gridSquare(num, cellsPerSide);
 
-      square.addEventListener('click', () => square.classList.add('active'));
+      square.addEventListener('click', () => square.classList.toggle('active'));
 
       grid.append(square);
     }
