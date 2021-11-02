@@ -11,14 +11,19 @@ nav{
 }
 
 .grid{
-    width: 500px;
-    height: 500px;
+    width: 800px;
+    height: 800px;
     border: 2px solid #000;
 }
 
 .square{
     border: 2px solid #000;
     cursor: pointer;
+}
+
+.square.active{
+    background-color: #6495ed;
+    color: #ccc;
 }
 
 footer{
